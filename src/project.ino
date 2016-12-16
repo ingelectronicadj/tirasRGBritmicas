@@ -13,7 +13,8 @@ int analogValue ; // valor del pin de entrada analógico
 //Girar el potenciometro hacia la izq aumenta el valor de ref 0-1023
 int digitValue ; // valor del pin de entrada digital
 
-int tiempo = 200;  //milisegundos
+int contador = 0;
+int tiempo = 100;  //milisegundos
 
 
 /*
@@ -52,11 +53,13 @@ void titileo(const byte ledPin) {
 void picoDeSonido(){
   analogValue = analogRead (analog_sensor);
   digitValue=digitalRead(digit_sensor);
+  Serial.print("ADC = ");
   Serial.println(analogValue, DEC);
-  if (analogValue > 37) // nivel de sonido en el que ejecuta accion
-  {
-  digitalWrite (ledPinR, HIGH); // enciende el led
-  delay(100); // al paso de 2 segundos
-  digitalWrite (ledPinR, LOW); // apaga el led
-  }
+  Serial.print("Contador = ");
+  Serial.println(contador);
+    if (analogValue > 37) // nivel de sonido en el que ejecuta accion
+    {
+      titileo(ledPinR);
+      contador++;
+    }
 }
