@@ -5,9 +5,14 @@
  */
 int analog_sensor = A1; // pin para la salida analógica del sensor
 int digit_sensor = 4; // pin para el potenciómetro del sensor
-int ledPin = 13;
+int ledPin = 13;  //En la PCB es el 5
+int ledPinR = 9;
+int ledPinG = 6;
+int ledPinB = 10;
 int analogValue ; // valor del pin de entrada analógico
 int digitValue ; // valor del pin de entrada digital
+
+int tiempo=100;
 
 /*
  ***********************************************************************
@@ -16,6 +21,9 @@ int digitValue ; // valor del pin de entrada digital
  */
 void setup () {
 pinMode (ledPin, OUTPUT);
+pinMode (ledPinR, OUTPUT);
+pinMode (ledPinG, OUTPUT);
+pinMode (ledPinB, OUTPUT);
 pinMode (digit_sensor, INPUT);
 Serial.begin (9600);
 }
@@ -27,7 +35,9 @@ Serial.begin (9600);
  */
 void loop () {
 picoDeSonido();
-//titileo();
+//rojo();
+//azul();
+//verde();
 }
 
 void picoDeSonido(){
@@ -42,10 +52,23 @@ void picoDeSonido(){
   }
 }
 
-void titileo() {
-  int ulises=100;
-  digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(ulises);              // wait for a second
-  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-  delay(ulises);              // wait for a second
+void rojo() {
+  digitalWrite(ledPinR, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(tiempo);              // wait for a second
+  digitalWrite(ledPinR, LOW);    // turn the LED off by making the voltage LOW
+  delay(tiempo);              // wait for a second
+}
+
+void verde() {
+  digitalWrite(ledPinG, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(tiempo);              // wait for a second
+  digitalWrite(ledPinG, LOW);    // turn the LED off by making the voltage LOW
+  delay(tiempo);              // wait for a second
+}
+
+void azul() {
+  digitalWrite(ledPinB, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(tiempo);              // wait for a second
+  digitalWrite(ledPinB, LOW);    // turn the LED off by making the voltage LOW
+  delay(tiempo);              // wait for a second
 }
