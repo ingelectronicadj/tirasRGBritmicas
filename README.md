@@ -1,1 +1,1 @@
-# tirasRGBritmicas
+# Tiras de leds RGB ritmicas
