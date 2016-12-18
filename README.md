@@ -17,7 +17,6 @@ Este proyecto tiene como proposito iluminar un ambiente de acuerdo al ritmo de l
 * Fase 3: Ritmicas por frecuencias del audio.
 
 Hilo útil para la fase 3: https://www.arduino.cc/en/Tutorial/SimpleAudioFrequencyMeter
-![grafo2](https://www.arduino.cc/en/uploads/Tutorial/ArduinoZeroAudioInput_bb.png "grafo2")
 
 ###Desarrollador
 * Diego Javier Mena - @ingelectronicadj
