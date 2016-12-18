@@ -7,7 +7,7 @@ int analog_sensor = A5; // pin para la salida analógica del sensor
 //int digit_sensor = 4; // pin para el potenciómetro del sensor
 
 //const byte ledPin;
-int ledPinR = 9;
+const byte ledPinR = 9;
 const byte ledPinG = 6;
 const byte ledPinB = 10;
 const byte ledPinPCB = 5;
@@ -40,8 +40,8 @@ void setup() {
  ***********************************************************************
  */
 void loop() {
-    blink();
-    //intensidadBrillo();
+    //blink();
+    rutinaBrillos();
     //picoDeSonido();
 
 }
@@ -71,14 +71,30 @@ void titileoCMY(const byte ledPin,const byte ledPin2) {
     delay(tiempo);
 }
 
-void intensidadBrillo(){
+void rutinaBrillos(){
+  intensidadBrilloRGB(ledPinR);
+  intensidadBrilloRGB(ledPinG);
+  intensidadBrilloRGB(ledPinB);
+  intensidadBrilloCMY(ledPinG,ledPinB); // Cian
+  intensidadBrilloCMY(ledPinR,ledPinB); // Magenta
+  intensidadBrilloCMY(ledPinR,ledPinG); // Amarillo
+}
+
+void intensidadBrilloRGB(const byte ledPin){
   for(brillo=0; brillo<=255; brillo++){
-      analogWrite(ledPinR, brillo);
-      analogWrite(ledPinG, brillo);
-      analogWrite(ledPinB, brillo);
+      analogWrite(ledPin, brillo);
       delay(30); // tiempo de transicion
      }
-     //delay(1000); // Sostiene el blanco 1s
+     //delay(1000); // Sostiene el color 1s
+}
+
+void intensidadBrilloCMY(const byte ledPin,const byte ledPin2){
+  for(brillo=0; brillo<=255; brillo++){
+      analogWrite(ledPin, brillo);
+      analogWrite(ledPin2, brillo);
+      delay(30); // tiempo de transicion
+     }
+     //delay(1000); // Sostiene el color 1s
 }
 
 void picoDeSonido(){
