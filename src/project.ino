@@ -109,14 +109,23 @@ void picoDeSonido(){
     if (analogValue > 32) { // nivel de sonido en el que ejecuta accion
 
             contador++;
-            if (contador <= 6) {
+            if (contador <= 3) {
                     titileoRGB(ledPinR);
             }
-            else if(contador > 6 && contador <= 12) {
+            else if(contador > 3 && contador <= 6) {
                     titileoRGB(ledPinG);
             }
-            else if(contador> 12 && contador<19) {
+            else if(contador> 6 && contador <= 9) {
                     titileoRGB(ledPinB);
+            }
+            else if(contador> 9 && contador <= 12) {
+                    titileoCMY(ledPinG,ledPinB); // Cian
+            }
+            else if(contador> 12 && contador <= 15) {
+                    titileoCMY(ledPinR,ledPinB); // Magenta
+            }
+            else if(contador> 15 && contador <= 18) {
+                    titileoCMY(ledPinR,ledPinG); // Amarillo
             }
             else{
                     contador=0;
