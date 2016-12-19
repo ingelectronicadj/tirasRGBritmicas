@@ -17,7 +17,8 @@ int analogValue;  // valor del pin de entrada analógico
 int digitValue;  // valor del pin de entrada digital
 
 int contador = 0;
-int tiempo = 1000;  //milisegundos
+int tiempo = 100;  //milisegundos
+int transicion = 20;  //milisegundos
 int brillo; //Variable auxiliar para condicionales
 
 
@@ -41,8 +42,8 @@ void setup() {
  */
 void loop() {
     //blink();
-    rutinaBrillos();
-    //picoDeSonido();
+    //rutinaBrillos();
+    picoDeSonido();
 
 }
 
@@ -59,7 +60,7 @@ void titileoRGB(const byte ledPin) {
     digitalWrite(ledPin, HIGH);
     delay(tiempo);
     digitalWrite(ledPin, LOW);
-    delay(tiempo);
+    delay(transicion);
 }
 
 void titileoCMY(const byte ledPin,const byte ledPin2) {
@@ -68,7 +69,7 @@ void titileoCMY(const byte ledPin,const byte ledPin2) {
     delay(tiempo);
     digitalWrite(ledPin, LOW);
     digitalWrite(ledPin2, LOW);
-    delay(tiempo);
+    delay(transicion);
 }
 
 void rutinaBrillos(){
@@ -83,8 +84,9 @@ void rutinaBrillos(){
 void intensidadBrilloRGB(const byte ledPin){
   for(brillo=0; brillo<=255; brillo++){
       analogWrite(ledPin, brillo);
-      delay(30); // tiempo de transicion
+      delay(transicion); // tiempo de transicion
      }
+     analogWrite(ledPin, 0);
      //delay(1000); // Sostiene el color 1s
 }
 
@@ -92,8 +94,10 @@ void intensidadBrilloCMY(const byte ledPin,const byte ledPin2){
   for(brillo=0; brillo<=255; brillo++){
       analogWrite(ledPin, brillo);
       analogWrite(ledPin2, brillo);
-      delay(30); // tiempo de transicion
+      delay(transicion); // tiempo de transicion
      }
+     analogWrite(ledPin, 0);
+     analogWrite(ledPin2, 0);
      //delay(1000); // Sostiene el color 1s
 }
 
