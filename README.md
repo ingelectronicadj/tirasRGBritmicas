@@ -11,6 +11,9 @@ Este proyecto tiene como proposito iluminar un ambiente de acuerdo al ritmo de l
 # Esquema de conexión
 ![grafo1](https://github.com/ingelectronicadj/tirasRGBritmicas/blob/master/imagenes/rgb.jpg?raw=true "grafo1")
 
+# Diseño PCB
+![grafo2](https://github.com/ingelectronicadj/tirasRGBritmicas/blob/master/imagenes/pcb.jpg?raw=true "grafo2")
+
 # Fases de trabajo
 * Fase 1: Realizar secuencias de blink(parpadeo), brillo(intensidad) **(Done)**
 * Fase 2: Ritmicas On/Off de colores RGB, CMY de acuerdo al sobrepaso de un nivel de volumen. **(Done)**
