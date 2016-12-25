@@ -1719,7 +1719,7 @@ design rules under a new name.</description>
 <element name="IC2" library="linear" package="TO220H" value="7805T" x="11.43" y="-6.35" rot="R180"/>
 <element name="T1" library="transistor" package="TO220" value="2N5496" x="-2.54" y="40.64" rot="R90"/>
 <element name="T2" library="transistor" package="TO220" value="2N5496" x="-2.54" y="52.07" rot="R90"/>
-<element name="T3" library="transistor" package="TO220" value="2N5496" x="-2.54" y="29.21" rot="R90"/>
+<element name="R" library="transistor" package="TO220" value="2N5496" x="-2.54" y="29.21" rot="R90"/>
 <element name="R2" library="eagle-ltspice" package="0207/10" value="" x="13.97" y="57.15" rot="R180">
 <attribute name="SPICEMODEL" value="NONE" x="13.97" y="57.15" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="13.97" y="57.15" size="1.778" layer="27" rot="R180" display="off"/>
@@ -1775,7 +1775,7 @@ design rules under a new name.</description>
 <wire x1="24.13" y1="6.35" x2="24.13" y2="3.81" width="0.8128" layer="16"/>
 <wire x1="7.62" y1="8.89" x2="11.43" y2="8.89" width="0.8128" layer="16"/>
 <contactref element="T2" pad="3"/>
-<contactref element="T3" pad="3"/>
+<contactref element="R" pad="3"/>
 <contactref element="T1" pad="3"/>
 <wire x1="3.81" y1="54.61" x2="3.81" y2="31.75" width="0" layer="19" extent="1-1"/>
 <wire x1="3.81" y1="43.18" x2="3.81" y2="54.61" width="0" layer="19" extent="1-1"/>
@@ -1856,11 +1856,11 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$4">
 <contactref element="R4" pad="2"/>
-<contactref element="T3" pad="1"/>
+<contactref element="R" pad="1"/>
 <wire x1="3.81" y1="26.67" x2="8.89" y2="53.34" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
-<contactref element="T3" pad="2"/>
+<contactref element="R" pad="2"/>
 <contactref element="TIRA_RGB" pad="1"/>
 <wire x1="3.81" y1="29.21" x2="25.4" y2="52.578" width="0" layer="19" extent="1-1"/>
 </signal>
@@ -1873,6 +1873,11 @@ design rules under a new name.</description>
 <contactref element="T1" pad="2"/>
 <contactref element="TIRA_RGB" pad="3"/>
 <wire x1="3.81" y1="40.64" x2="25.4" y2="48.514" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$8">
+<contactref element="IC1" pad="15"/>
+<contactref element="R4" pad="1"/>
+<wire x1="10.16" y1="49.53" x2="19.05" y2="53.34" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

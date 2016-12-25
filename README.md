@@ -8,9 +8,6 @@ Este proyecto tiene como proposito iluminar un ambiente de acuerdo al ritmo de l
 * Sensor de sonido
 * Crsital de 16MHz, condensadores de 22pF, resistencias
 
-# Esquema de conexión
-![grafo1](https://github.com/ingelectronicadj/tirasRGBritmicas/blob/master/imagenes/rgb.jpg?raw=true "grafo1")
-
 # Diseño PCB
 ![grafo2](https://github.com/ingelectronicadj/tirasRGBritmicas/blob/master/imagenes/pcb.jpg?raw=true "grafo2")
 
